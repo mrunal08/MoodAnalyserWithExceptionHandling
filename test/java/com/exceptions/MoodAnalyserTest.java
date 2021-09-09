@@ -5,13 +5,14 @@ import org.junit.Assert;
 
 public class MoodAnalyserTest {
    @Test
-    public void whenGivenAMessageAbilityToAnalyseAndRespondHappyOrSadMood(){
+    public void whenGivenAMessageAbilityToAnalyseAndRespondHappyOrSadMood_shouldReturnTrue(){
         MoodAnalyser moodAnalyser = new MoodAnalyser();
-        String mood = moodAnalyser.analyseMood("This is a message");
+        String mood = moodAnalyser.analyseMood("This is a sad message");
 
-        Assert.assertThat(mood,CoreMatchers.is("HAPPY"));
+        Assert.assertThat(mood,CoreMatchers.is("SAD"));
 
     }
 
+  
 
 }

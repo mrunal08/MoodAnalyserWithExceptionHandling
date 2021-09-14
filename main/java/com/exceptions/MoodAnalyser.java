@@ -1,14 +1,29 @@
 package com.exceptions;
 
-public class MoodAnalyser {
-    public String analyseMood(String message){
+import com.exceptions.MoodAnalysisException;
 
-            if (message.contains(("sad"))) {
+public class MoodAnalyser {
+    String message;
+
+    public MoodAnalyser() {
+    }
+
+    public MoodAnalyser(String message) {
+        this.message = message;
+    }
+
+    public String analyseMood() throws MoodAnalysisException {
+
+        try {
+            if (this.message.contains("sad"))
                 return "SAD";
-            } else {
                 return "HAPPY";
-            }
+
+        } catch (NullPointerException nullPointerException) {
+            throw new MoodAnalysisException("Invalid Message");
         }
 
     }
+    }
+
 
